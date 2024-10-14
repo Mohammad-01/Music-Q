@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://p.turbosquid.com/ts-thumb/GW/wUj2L9/1Q/18/jpg/1679584587/1920x1080/fit_q87/44056eb45f29f6c972a40df91e7c6e451d1164e3/18.jpg'); /* ضع رابط الصورة هنا */
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+}
+h1 {
+  margin: 20px 0;
+  font-size: 2.5em;
+}
+.tagline {
+  margin: 10px 0;
+  font-size: 1.5em;
+}
+#playerContainer {
+  margin: 20px 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+li {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
