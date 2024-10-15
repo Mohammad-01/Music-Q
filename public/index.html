@@ -10,14 +10,20 @@
 </head>
 <body>
 
+    <div class="icon-container" onclick="window.location.href='http://azrotv.com/iphone/arabic/mobi_arabic_2.php';">
+        <img src="https://www.mrdomain.com/assets/images/products/domains/tv.png" alt="Icon" />
+    </div>
+    
     <div class="container">
         <h1>Music Queue</h1>
+
         <div><h1>Majlis Abu Alhasan</h1></div>
         <div class="tagline">What’s the soundtrack of your day? Share it!</div>
         
         <form id="songForm">
             <input type="text" id="songUrl" placeholder="Enter YouTube URL" required>
             <button type="submit">Add Song</button>
+            <button type="button" id="clearQueue">Clear Songs</button>
         </form>
         
         <ul id="songQueue"></ul>

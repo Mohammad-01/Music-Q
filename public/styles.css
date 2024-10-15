@@ -2,11 +2,12 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url('https://p.turbosquid.com/ts-thumb/GW/wUj2L9/1Q/18/jpg/1679584587/1920x1080/fit_q87/44056eb45f29f6c972a40df91e7c6e451d1164e3/18.jpg'); /* ضع رابط الصورة هنا */
+  background-image: url('https://p.turbosquid.com/ts-thumb/GW/wUj2L9/1Q/18/jpg/1679584587/1920x1080/fit_q87/44056eb45f29f6c972a40df91e7c6e451d1164e3/18.jpg');
   background-size: cover;
   background-position: center;
   color: white;
 }
+
 .container {
   max-width: 600px;
   margin: auto;
@@ -15,25 +16,61 @@ body {
   background: rgba(0, 0, 0, 0.7);
   border-radius: 5px;
 }
+
 h1 {
   margin: 20px 0;
   font-size: 2.5em;
 }
+
 .tagline {
   margin: 10px 0;
   font-size: 1.5em;
 }
+
 #playerContainer {
   margin: 20px 0;
 }
+
 ul {
   list-style: none;
   padding: 0;
   margin: 20px 0;
 }
+
 li {
   background: rgba(255, 255, 255, 0.2);
   padding: 10px;
   margin: 5px 0;
   border-radius: 5px;
 }
+
+.icon-container {
+  position: fixed;
+  top: 20px; /* المسافة من الجزء العلوي */
+  right: 20px; /* المسافة من الجهة اليمنى */
+  width: 80px; /* عرض الأيقونة */
+  height: 80px; /* ارتفاع الأيقونة */
+  border-radius: 50%; /* الشكل الدائري */
+  overflow: hidden; /* إخفاء أي محتوى زائد */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* ظل للأيقونة */
+  background-color: #ffffff46; /* لون الخلفية */
+  display: flex; /* استخدام فليكس */
+  justify-content: center; /* توسيط المحتوى أفقياً */
+  align-items: center; /* توسيط المحتوى عمودياً */
+  cursor: pointer; /* تغيير المؤشر عند المرور */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثيرات الانتقال */
+  z-index: 1000; /* التأكد من ظهور الأيقونة فوق العناصر الأخرى */
+  border: 4px solid rgba(255, 255, 255, 0.788); /* إضافة إطار أبيض */
+}
+
+
+.icon-container img {
+  width: 100%; /* استخدام العرض الكامل */
+  height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+}
+
+.icon-container:hover {
+  transform: scale(1.1); /* تكبير الأيقونة عند التمرير */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* زيادة الظل */
+}
+

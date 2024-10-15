@@ -1,8 +1,10 @@
 const player = new Plyr('#player', {
-    youtube: { noCookie: true }
+    youtube: { noCookie: true },
+    autoplay: true // تأكد من تعيين autoplay هنا
 });
 
 const songQueue = [];
+let currentlyPlaying = null; // متغير لتتبع الأغنية الحالية
 const socket = io(); // الاتصال بالسيرفر
 
 // إضافة مستمع لحدث إرسال النموذج
@@ -10,12 +12,17 @@ document.getElementById('songForm').addEventListener('submit', function (e) {
     e.preventDefault(); // منع إعادة تحميل الصفحة
     const songUrl = document.getElementById('songUrl').value; // الحصول على رابط الأغنية
     const videoId = getYouTubeID(songUrl); // استخراج ID من رابط يوتيوب
-    if (videoId) {
+    if (videoId && !songQueue.includes(videoId)) { // تحقق من عدم وجود الأغنية مسبقًا
         socket.emit('addSong', videoId); // إرسال ID إلى السيرفر
         document.getElementById('songUrl').value = ''; // مسح حقل الإدخال
     } else {
-        console.error('Invalid YouTube URL'); // طباعة خطأ إذا كان الرابط غير صحيح
+        console.error('Invalid YouTube URL or song already exists in the queue'); // طباعة خطأ إذا كان الرابط غير صحيح أو الأغنية موجودة مسبقًا
     }
+});
+
+// مستمع لزر مسح الأغاني
+document.getElementById('clearQueue').addEventListener('click', function () {
+    socket.emit('clearQueue'); // إبلاغ السيرفر لمسح قائمة الأغاني
 });
 
 // عندما يتصل المستخدم بالسيرفر، يتم إرسال قائمة الأغاني
@@ -25,8 +32,8 @@ socket.on('updateQueue', function (queue) {
         songQueue.push(videoId); // إضافة الأغاني الجديدة
     });
     updateQueue(); // تحديث واجهة المستخدم
-    if (songQueue.length === 1) {
-        playSong(songQueue[0]); // تشغيل أول أغنية
+    if (songQueue.length > 0 && currentlyPlaying !== songQueue[0]) {
+        playSong(songQueue[0]); // تشغيل أول أغنية فقط إذا لم تكن مشغلة
     }
 });
 
@@ -50,6 +57,8 @@ function updateQueue() {
 
 // دالة لتشغيل الأغنية
 function playSong(videoId) {
+    if (currentlyPlaying === videoId) return; // إذا كانت الأغنية الحالية هي نفسها، فلا تفعل شيئًا
+
     console.log(`Playing song: ${videoId}`); // طباعة ID الأغنية
     player.source = {
         type: 'video',
@@ -58,6 +67,8 @@ function playSong(videoId) {
             provider: 'youtube',
         }],
     };
+    currentlyPlaying = videoId; // تحديث الأغنية الحالية
+    player.volume = 0; // كتم الصوت
     player.play().catch(error => {
         console.error('Error playing song:', error); // طباعة أي أخطاء أثناء التشغيل
     });
