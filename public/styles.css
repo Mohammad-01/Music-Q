@@ -6,6 +6,14 @@ body {
   background-size: cover;
   background-position: center;
   color: white;
+  height: 100vh;
+}
+
+/* جعل الخلفية تتناسب مع الشاشات الصغيرة */
+@media only screen and (max-width: 600px) {
+  body {
+      background-size: contain; /* لضبط الصورة حسب حجم الشاشة الصغيرة */
+  }
 }
 
 .container {
@@ -27,6 +35,31 @@ h1 {
   font-size: 1.5em;
 }
 
+/* تنسيق مكان إدخال الأغنية */
+#songForm input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+#songForm button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5f1010; /* اللون الخمري للأزرار */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#songForm button:hover {
+  background-color: #a81d1d; /* تدريج اللون عند التحريك */
+}
+
 #playerContainer {
   margin: 20px 0;
 }
@@ -44,33 +77,81 @@ li {
   border-radius: 5px;
 }
 
+/* تصميم أيقونة دائرية */
 .icon-container {
   position: fixed;
-  top: 20px; /* المسافة من الجزء العلوي */
-  right: 20px; /* المسافة من الجهة اليمنى */
-  width: 80px; /* عرض الأيقونة */
-  height: 80px; /* ارتفاع الأيقونة */
-  border-radius: 50%; /* الشكل الدائري */
-  overflow: hidden; /* إخفاء أي محتوى زائد */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* ظل للأيقونة */
-  background-color: #ffffff46; /* لون الخلفية */
-  display: flex; /* استخدام فليكس */
-  justify-content: center; /* توسيط المحتوى أفقياً */
-  align-items: center; /* توسيط المحتوى عمودياً */
-  cursor: pointer; /* تغيير المؤشر عند المرور */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثيرات الانتقال */
-  z-index: 1000; /* التأكد من ظهور الأيقونة فوق العناصر الأخرى */
-  border: 4px solid rgba(255, 255, 255, 0.788); /* إضافة إطار أبيض */
+  top: 20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background-color: #cf9e9e36;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid white; /* إضافة إطار أبيض */
 }
 
-
 .icon-container img {
-  width: 100%; /* استخدام العرض الكامل */
-  height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+  width: 100%;
+  height: auto;
 }
 
 .icon-container:hover {
-  transform: scale(1.1); /* تكبير الأيقونة عند التمرير */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* زيادة الظل */
+  transform: scale(1.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
+/* تصميم قائمة التنقل */
+#menu {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  border-radius: 5px;
+  z-index: 1000; /* تأكد من ظهورها فوق المحتوى */
+}
+
+#menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+#menu ul li {
+  margin: 5px 0;
+}
+
+#menu a {
+  color: white;
+  text-decoration: none;
+}
+
+#menu a:hover {
+  text-decoration: underline;
+}
+
+/* إخفاء القائمة بشكل افتراضي */
+.hidden {
+  display: none;
+}
+
+.menu-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 15px;
+  background-color: #5f1010;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.menu-button:hover {
+  background-color: #a81d1d;
+}
