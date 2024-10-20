@@ -78,3 +78,9 @@ function playSong(videoId) {
 player.on('ended', () => {
     socket.emit('playNext'); // إبلاغ السيرفر بتشغيل الأغنية التالية
 });
+
+// قائمة التنقل
+document.getElementById('menuToggle').addEventListener('click', function () {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('hidden'); // تغيير ظهور القائمة
+});
