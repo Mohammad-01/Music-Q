@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url('https://p.turbosquid.com/ts-thumb/GW/wUj2L9/1Q/18/jpg/1679584587/1920x1080/fit_q87/44056eb45f29f6c972a40df91e7c6e451d1164e3/18.jpg');
+  background-image: url('https://i.imgur.com/x45QO5d.jpeg');
   background-size: cover;
   background-position: center;
   color: white;
@@ -21,7 +21,7 @@ body {
   margin: auto;
   padding: 20px;
   text-align: center;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.322);
   border-radius: 5px;
 }
 
@@ -50,14 +50,14 @@ h1 {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #5f1010; /* اللون الخمري للأزرار */
+  background-color: #193b45; /* اللون الخمري للأزرار */
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 #songForm button:hover {
-  background-color: #a81d1d; /* تدريج اللون عند التحريك */
+  background-color: #2c506086; /* تدريج اللون عند التحريك */
 }
 
 #playerContainer {
@@ -86,7 +86,7 @@ li {
   height: 80px;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.322);
   background-color: #cf9e9e36;
   display: flex;
   justify-content: center;
@@ -103,7 +103,7 @@ li {
 
 .icon-container:hover {
   transform: scale(1.1);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 40pxrgba(0, 0, 0, 0.322);
 }
 
 /* تصميم قائمة التنقل */
@@ -111,7 +111,7 @@ li {
   position: fixed;
   top: 80px;
   left: 20px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.411);
   padding: 15px;
   border-radius: 5px;
   z-index: 1000; /* تأكد من ظهورها فوق المحتوى */
@@ -145,13 +145,13 @@ li {
   top: 20px;
   left: 20px;
   padding: 10px 15px;
-  background-color: #5f1010;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.568);
+  color: rgb(255, 255, 255);
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .menu-button:hover {
-  background-color: #a81d1d;
+  background-color:#193b45;
 }
